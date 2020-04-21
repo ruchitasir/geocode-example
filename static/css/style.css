@@ -1,0 +1,14 @@
+.marker{
+   /*  background-color: powderblue;
+    background-size: cover;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px; */
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid aqua;
+
+
+ }
