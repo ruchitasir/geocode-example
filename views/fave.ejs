@@ -1,0 +1,25 @@
+
+<h1>Favorite Places Details</h1>
+
+<div>   <a href="/">Back to Search</a>   </div>
+
+
+<ul>
+    <% favePlaces.forEach(fp=>{ %> 
+        <li>City: <%=(fp.city).toTitleCase()%> </li> 
+        <li>State: <%=(fp.state).toUpperCase()%> </li>
+        <li>Latitude: <%=fp.lat%> </li>
+        <li>Longitude: <%=fp.long%> </li>
+        <li><form  id="delete-form" method="POST" action="/search/remove?_method=DELETE">
+            <input type="hidden" name="id" value="<%=fp.id%>">
+            <input type="hidden" name="city" value="<%=fp.city%>">
+            <input type="hidden" name="state" value="<%=fp.state%>">
+            <input type="hidden" name="lat" value="<%=fp.lat%>">
+            <input type="hidden" name="long" value="<%=fp.long%>">  
+            <input type="submit" value="Remove from favorite">
+            </form>
+        </li>
+        <hr>
+   <% }) %>  
+
+</ul>

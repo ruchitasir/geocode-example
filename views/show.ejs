@@ -1,0 +1,27 @@
+<h1>Details about <%=match.place_name%> </h1>
+<p id="long">Longitude: <%=match.center[0]%> </p>
+<p id="lat">Latitude: <%=match.center[1]%> </p>
+
+<div id="map">
+    <script>
+       // let lat = document.getElementById('lat').textContent
+       mapboxgl.accessToken ='<%=mapKey %>'
+        let map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [<%=match.center[0] %>,<%=match.center[1]%>],
+            zoom: 12
+        })
+    </script>
+    </div>
+
+   <form  method="POST" action="/search/add">
+    <input type="hidden" name="city" value="<%=city%> ">
+    <input type="hidden" name="state" value="<%=state%>">
+    <input type="hidden" name="lat" value="<%=match.center[1]%>">
+    <input type="hidden" name="long" value="<%=match.center[0]%>">   
+    <button type="submit">Add to Favorite </button>
+   </form> 
+
+   <div>   <a href="/">Back to Search</a>   </div>
+  
